@@ -7,7 +7,7 @@
 
 | 序号 | 内容 | 涉及软件包 |  时间 |        
 | :--: | :--: | :--: | :--: |       
-|  1   | 日志框架  | [SLF4J & logback](./logback.md) | 2017.2.7 |    
+|  1   | 日志框架  | [SLF4J & logback](./logback.md) | 2017.3.12 |    
 |  2   | 测试框架  | JUnit | 2017.2.7 |    
 |  3   | 打桩框架  | easyMock & powerMock | 2017.2.7 |
 
