@@ -305,8 +305,8 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
     <appender-ref ref="STDOUT" />
   </root>
 
-</configurat
-其日志级别如下：    
+</configurat>
+其日志级别如下：   
 
 | Logger名称 | 设置的日志级别 | 实际日志级别 |    
 | ----------- | ------------- | ----------- |    
