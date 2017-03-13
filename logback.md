@@ -308,7 +308,7 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
   </root>
 
 </configuration>
-
+```
 其日志级别如下：   
 
 | Logger名称 | 设置的日志级别 | 实际日志级别 |    
@@ -318,7 +318,7 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
 | chapter.configuration.MyApp3 | null | INFO |    
 | chapter.configuration.Foo | null | INFO |    
 
- ### 4.4 配置Appender
+ ### 4.5 配置Appender
  一个Appender通过`<appender>`元素来配置，该元素有两个必须的属性`name`和`class`。其中，`name`确定该appender的名称，而`class`确定该appender类实例化具体的名称。`<appender>`元素包含0或1个`<layout>`元素，0到多个`<encoder>`元素以及0到多个`<filter>`元素.除了这三个常用元素，`<appender>`也可以包含JavaBean的属性.
 
  `<layout>`元素包含一个必须的`class`属性，来确定要实例化的layout的具体名称。
