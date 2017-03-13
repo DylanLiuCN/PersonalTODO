@@ -1,7 +1,7 @@
 # logback笔记    
 > SyinChwun Leo     
 > 2017年3月11日
-> 
+
 ## 1. logback依赖设置    
 目前logback主要包括三个模块：    
 
