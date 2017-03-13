@@ -254,6 +254,7 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
 ```
 这样，属于chapter.configuration的日志仅打印info信息。   
 用户可以设置多个logger,具体如下：
+
 ```xml
 <configuration>
 
@@ -275,6 +276,7 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
 
 </configuration>
 ```
+
 即，以上设置的日志级别如下所示：     
 
 | Logger 名称 | 设置的日志级别 | 实际日志级别 |    
@@ -305,7 +307,8 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
     <appender-ref ref="STDOUT" />
   </root>
 
-</configurat>
+</configuration>
+
 其日志级别如下：   
 
 | Logger名称 | 设置的日志级别 | 实际日志级别 |    
