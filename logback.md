@@ -217,18 +217,19 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
 ### 4.1 tag名称大小写敏感问题
 从logback version 0.9.17开始，tag的名字对大小写不敏感，例如：`<logger>`,`<Logger>`以及`<LOGGER>`在配置文件中都是可以使用的元素，将被认为是同一个元素。如果用户使用`<xyz>`打开一个tag，那么他必须使用`</xyz>`关闭该tag，`</XyZ>`并不起作用。潜在的规则是，tag名字对第一个字母大小写不敏感，即：`<xyz>`和`<Xyz>`是相等的，但不等价与`<xYz>`。
 
-### 4.2 配置loggers或者<logger>元素
+### 4.2 配置loggers或者`<logger>`元素
 
 一个logger可以通过`<logger>`元素进行配置。一个`<logger>`元素中包含一个强制性的`name`属性，一个可选的`level`属性，一个可选的`additivity`属性，属性值为`true`或`false`。`level`属性的取值可以为大小写不敏感的字符串`TRACE`，`DEBUG`，`INFO`，`WARN`，`ERROR`，`ALL`或者`OFF`。特殊值`INHERITED`或者其同义词`NULL`，将迫使它继承上层的logger配置。    
 
-<logger>元素可以包含0个或多个<appender-ref>元素，每个appender参阅一个已经命名的logger。注意： 与log4j不同，当配置一个给定的appender时，logback-classic并不关闭或移除之前的appender。
+`<logger>`元素可以包含0个或多个`<appender-ref>`元素，每个appender参阅一个已经命名的logger。注意： 与log4j不同，当配置一个给定的appender时，logback-classic并不关闭或移除之前的appender。
 
-### 4.3 配置root的logger或者<root>元素
-<root>元素用来配置root的logger.它仅支持一个属性，即`level`属性。他并不允许有其他属性，因为root logger并不支持其他的flag.另外，既然root logger已经被命名为"ROOT"，因此，也不允许使用`name`属性。`level`的值可以取大小写不敏感的字符串`TRACE`,`DEBUG`,`INFO`,`WARN`,`ERROR`,`ALL`或者`OFF`.注意，root的`level`级别不允许设为`INHERITED`或者`NULL`。
+### 4.3 配置root的logger或者`<root>`元素
+
+`<root>`元素用来配置root的logger.它仅支持一个属性，即`level`属性。他并不允许有其他属性，因为root logger并不支持其他的flag.另外，既然root logger已经被命名为"ROOT"，因此，也不允许使用`name`属性。`level`的值可以取大小写不敏感的字符串`TRACE`,`DEBUG`,`INFO`,`WARN`,`ERROR`,`ALL`或者`OFF`.注意，root的`level`级别不允许设为`INHERITED`或者`NULL`。
 
  与`<logger>`元素，类似，`<root>`元素也可以包含0个或多个`<appender-ref>`元素，每个appender军添加到root logger中。注意： 与log4j不同，当配置一个给定的appender时，logback-classic并不关闭或移除之前的appender。
 
- ### 4.4 举例   
+### 4.4 举例   
 
 简单设置一个root logger.假设，不在需要输出属于包"chapters.configuration"中部分的任何DEBUG信息，，具体设置如下：     
 ```xml
@@ -318,7 +319,8 @@ logback允许用户在不需要重新编译代码的情况下重新定义log的�
 | chapter.configuration.MyApp3 | null | INFO |    
 | chapter.configuration.Foo | null | INFO |    
 
- ### 4.5 配置Appender
+ ### 4.5 配置Appender    
+ 
  一个Appender通过`<appender>`元素来配置，该元素有两个必须的属性`name`和`class`。其中，`name`确定该appender的名称，而`class`确定该appender类实例化具体的名称。`<appender>`元素包含0或1个`<layout>`元素，0到多个`<encoder>`元素以及0到多个`<filter>`元素.除了这三个常用元素，`<appender>`也可以包含JavaBean的属性.
 
  `<layout>`元素包含一个必须的`class`属性，来确定要实例化的layout的具体名称。
@@ -423,7 +425,9 @@ ConsoleAppender将输出定位到控制台上，更精确的说是System.out或S
 RollingFileAppender扩展了FileAppender,可以滚动生产日志文件。例如， RollingFileAppender创建了一个名为log.txt的日志文件，一旦达到某个条件，将它的日志输出到一个新的文件中。
 
 RollingFileAppender具有两个子组成部分，第一个组成部分叫RollingPolicy,用来定义滚动策略，第二个部分叫触发策略，用来定义何时触发滚动。因此RollingPolicy用来定义what，而TriggerPolicy用来定义when。
+
 #### 5.3.1 RollingPoilicy
+
 * TimeBasedRollingPolicy, 是最受欢迎的滚动策略，滚动策略以时间为基础，如：按天或按月。该策略包括以下几项内容：    
 
 |  属性名称  | 属性类型 | 说明 |    
@@ -572,7 +576,8 @@ Pattern通过`<pattern>`元素进行设置，使用"%变量"的形式获取具�
 | -number | 左对齐，number为向后对齐的字符个数，如%-5level, 即level后的信息要左对齐，5为对齐的字符个数 |     
 
 * 使用context name   
-  该变量通过`<contextName>`设置，举例： 
+
+该变量通过`<contextName>`设置，举例： 
 
 ```xml
 <configuration>
@@ -589,7 +594,8 @@ Pattern通过`<pattern>`元素进行设置，使用"%变量"的形式获取具�
 </configuration>
 ```
 * 定义变量   
- 用户可以使用`<property>`对变量进行定义，`<property>`具有两个属性，分别是`name`和`value`具体如下：    
+
+用户可以使用`<property>`对变量进行定义，`<property>`具有两个属性，分别是`name`和`value`具体如下：    
 
 ```xml
 <configuration>
