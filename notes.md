@@ -38,4 +38,8 @@ df -h
 * 上一步过后，这个地方会弹出一个vi交互窗口，你需要用insert模式插入MR的相关信息，即MR的标题、MR的message，第一行会被当做commit的标题，后面的所有内容会被当做commit message
 * `git push huawei develop:develop`     
   将本地的develop分支（经过了步骤2、3、4，已经包含了MR的更改）push到我们主库的develop分支上
-  
+  
+### 5. 代码回退    
+* `git log`查看提交记录    
+* `git reset --HARD *****`
+* `git push origin *** -f`
