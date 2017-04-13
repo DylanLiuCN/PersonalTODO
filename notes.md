@@ -63,7 +63,7 @@ df -h
 ##### 6.3 安装curl    
 * tar curl-7.53.1.tar.gz
 * cd curl-7.53.1
-* ./configure --prefix=/usr/local/curl-7.53.1 --with-ssl=/usr/local/openssl-1.0.2 --zlib=/usr/local/zlib-1.2.8    
+* ./configure --prefix=/usr/local/curl-7.53.1 --with-ssl=/usr/local/openssl-1.0.2 --with-zlib=/usr/local/zlib-1.2.8    
 * make
 * make install
 
