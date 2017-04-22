@@ -55,15 +55,14 @@ df -h
 * git pull 更新一下即可
 
 #### 3.5 手动编译git
-
-#### 3.5.1 安装zlib    
+##### 3.5.1 安装zlib    
 * tar zxvf zlib-1.2.8.tar.gz      
 * cd zlib-1.2.8     
 * ./configure --prefix=/usr/local/zlib-1.2.8
 * make    
 * make install
 
-#### 3.5.2 安装openssl
+##### 3.5.2 安装openssl
 * tar openssl-1.0.2.tar.gz    
 * cd openssl-1.0.2
 * CFLAG=-fPIC ./config shared --prefix=/usr/local/openssl-1.0.2
@@ -77,7 +76,7 @@ df -h
 * make
 * make install
 
-#### 3.5.4 安装git
+##### 3.5.4 安装git
 * tar zxvf git-2.8.4.tar.gz    
 * cd git-2.8.4    
 * ./configure --with-curl=/usr/local/curl-7.53.1 --with-zlib=/usr/local/zlib-1.2.8    
