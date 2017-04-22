@@ -44,30 +44,36 @@ df -h
 * `git reset --HARD *****`
 * `git push origin *** -f`
 
-### 6. 手动编译git
+### 6. 一般分支合入主干分支新增特性
+* git checkout branchA(一般分支)
+* git rebase master(主干分支)(如果无冲突，结束)
+* 如果有冲突，解决冲突，然后git add .（后面不能git commit, 否则会生成一个无名分支）
+* git rebase --continue
 
-#### 6.1 安装zlib    
+### 7. 手动编译git
+
+#### 7.1 安装zlib    
 * tar zxvf zlib-1.2.8.tar.gz      
 * cd zlib-1.2.8     
 * ./configure --prefix=/usr/local/zlib-1.2.8
 * make    
 * make install
 
-#### 6.2 安装openssl
+#### 7.2 安装openssl
 * tar openssl-1.0.2.tar.gz    
 * cd openssl-1.0.2
 * CFLAG=-fPIC ./config shared --prefix=/usr/local/openssl-1.0.2
 * make    
 * make install    
 
-##### 6.3 安装curl    
+##### 7.3 安装curl    
 * tar curl-7.53.1.tar.gz
 * cd curl-7.53.1
 * ./configure --prefix=/usr/local/curl-7.53.1 --with-ssl=/usr/local/openssl-1.0.2 --with-zlib=/usr/local/zlib-1.2.8    
 * make
 * make install
 
-#### 6.4 安装git
+#### 7.4 安装git
 * tar zxvf git-2.8.4.tar.gz    
 * cd git-2.8.4    
 * ./configure --with-curl=/usr/local/curl-7.53.1 --with-zlib=/usr/local/zlib-1.2.8    
