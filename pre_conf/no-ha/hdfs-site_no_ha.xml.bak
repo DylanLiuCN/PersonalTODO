@@ -1,0 +1,18 @@
+<configuration>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>MASTER_HOSTNAME:9001</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:/opt/data/hdfs/namedir</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:/opt/data/hdfs/datadir</value>
+    </property>
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property>
+</configuration>
