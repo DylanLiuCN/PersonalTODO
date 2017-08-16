@@ -1,0 +1,46 @@
+<configuration>
+  <property>
+    <name>yarn-application.classpath</name>
+    <value>>/usr/local/stream/hadoop/etc/hadoop,/usr/local/stream/hadoop/share/hadoop/common/*,/usr/local/stream/hadoop/share/hadoop/common/lib/*,/usr/local/stream/hadoop/share/hadoop/hdfs/*,/usr/local/stream/hadoop/share/hadoop/hdfs/lib/*,/usr/local/stream/hadoop/share/hadoop/mapreduce/*,/usr/local/stream/hadoop/share/hadoop/mapreduce/lib/*,/usr/local/stream/hadoop/share/hadoop/yarn/*,/usr/local/stream/hadoop/share/hadoop/yarn/lib/*</value>
+  </property>
+  <property>
+      <name>yarn.nodemanager.aux-services</name>
+      <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+      <name>yarn.nodemanager.vmem-pmem-ratio</name>
+      <value>5</value>
+  </property>
+  <!--property>
+      <name>yarn.nodemanager.resource.memory-mb</name>
+      <value>16384</value>
+  </property-->
+  <property>
+      <name>yarn.nodemanager.log-dirs</name>
+      <value>/opt/data/hdfs/logs</value>
+  </property>
+  <property>
+      <name>yarn.resourcemanager.address</name>
+      <value>MASTER_HOSTNAME:8032</value>
+  </property>
+  <property>
+      <name>yarn.resourcemanager.scheduler.address</name>
+      <value>MASTER_HOSTNAME:8030</value>
+  </property>
+  <property>
+      <name>yarn.resourcemanager.resource-tracker.address</name>
+      <value>MASTER_HOSTNAME:8035</value>
+  </property>
+  <property>
+      <name>yarn.resourcemanager.admin.address</name>
+      <value>MASTER_HOSTNAME:8033</value>
+      </property>
+  <property>
+      <name>yarn.resourcemanager.webapp.address</name>
+      <value>MASTER_HOSTNAME:8088</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.address</name>
+    <value>NODE_MANAGER_HOSTNAME:8089</value>
+</property>
+</configuration>
