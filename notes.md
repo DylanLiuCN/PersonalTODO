@@ -119,3 +119,7 @@ df -h
    create mask = 0664
    directory mask = 0775
 ```
+* 添加Linux账号
+ `smbpasswd -a 账号名称`
+* 激活账号    
+ `smbpasswd -e 账号名称`
