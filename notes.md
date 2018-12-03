@@ -82,3 +82,40 @@ df -h
 * ./configure --with-curl=/usr/local/curl-7.53.1 --with-zlib=/usr/local/zlib-1.2.8    
 * make    
 * make install
+
+##### 4. samba安装    
+* yum install samba samba-client
+* 查看SELinux是否关闭    
+* 在/etc/samba/smb.conf中添加如下内容：
+```
+[global]
+   workgroup = WORKGROUP
+   security = user
+   passdb backend = tdbsam
+   printing = cups
+   printcap name = cups
+   load printers = yes
+   cups options = raw
+   ntlm auth = yes
+   
+[homes]
+   commont = Home Directories
+   valid users = %S, %D%w%S
+   browserable = Yes
+   read only = No
+   inherit acls = Yes
+   
+[printers]
+   comment = All Printers
+   path = /var/tmp
+   printable = Yes
+   create mask = 0600
+   browseable = No
+[print$]
+   comment = Printer Drivers
+   path = /var/lib/samba/drivers
+   write list = @printadmin root
+   force group = @printadmin
+   create mask = 0664
+   directory mask = 0775
+```
